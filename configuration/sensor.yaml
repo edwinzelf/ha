@@ -1,0 +1,128 @@
+  - platform: yr
+    monitored_conditions:
+      - temperature
+      - symbol
+      - precipitation
+      - windSpeed
+      - pressure
+      - windDirection
+      - humidity
+      - fog
+      - cloudiness
+      - lowClouds
+      - mediumClouds
+      - highClouds
+      - dewpointTemperature
+
+  - platform: pi_hole
+    host: !secret pihole_ip
+    monitored_conditions: ads_percentage_today
+
+  - platform: ring
+    monitored_conditions:
+      - battery
+      - last_activity
+      - last_ding
+      - last_motion
+      - volume
+
+# Googel travel stuff
+  - platform: google_travel_time
+    name: Edwin To Home
+    api_key: !secret google_api_key
+    origin: device_tracker.edwin_ephone7
+    destination: zone.home
+  - platform: google_travel_time
+    name: Edwin To Tilburg
+    api_key: !secret google_api_key
+    origin: device_tracker.edwin_ephone7
+    destination: zone.work
+  - platform: google_travel_time
+    name: Edwin To Apeldoorn
+    api_key: !secret google_api_key
+    origin: device_tracker.edwin_ephone7
+    destination: zone.work_2
+  - platform: google_travel_time
+    name: Edwin To Huis
+    api_key: !secret google_api_key
+    origin: device_tracker.edwin_ephone7
+    destination: zone.home
+
+
+# Homewizard
+  - platform: command_line
+    command: "/home/homeassistant/.homeassistant/homewizard/homewizard.sh -t -d Zolder"
+    name: Zolder Temperature
+    unit_of_measurement: "°C"
+  - platform: command_line
+    command: "/home/homeassistant/.homeassistant/homewizard/homewizard.sh -t -d Slaapkamer"
+    name: Slaapkamer Temperature
+    unit_of_measurement: "°C"
+  - platform: command_line
+    command: "/home/homeassistant/.homeassistant/homewizard/homewizard.sh -t -d Binnen"
+    name: Woonkamer Temperature
+    unit_of_measurement: "°C"
+  - platform: command_line
+    command: "/home/homeassistant/.homeassistant/homewizard/homewizard.sh -t -d Buiten"
+    name: Buiten Temperature
+    unit_of_measurement: "°C"
+
+# Date and time
+  - platform: time_date
+    display_options:
+      - 'date'
+      - 'time'
+
+  - platform: synologydsm
+    host: 192.168.32.9
+    username: !secret synology_user
+    password: !secret synology_password
+    monitored_conditions:
+      - cpu_total_load
+      - memory_real_usage
+      - network_up
+
+# Sonos volume sliders
+  - platform: template
+    sensors:
+        sonosvolume_keuken:
+          value_template: >-
+            {{ (states.media_player.keuken.attributes.volume_level * 100) |int }}
+          friendly_name: 'Sonos Keuken Volume'
+
+  - platform: template
+    sensors:
+        sonosvolume_badkamer:
+          value_template: >-
+            {{ (states.media_player.badkamer.attributes.volume_level * 100) |int }}
+          friendly_name: 'Sonos Badkamer Volume'
+
+  - platform: template
+    sensors:
+        sonosvolume_woonkamer:
+          value_template: >-
+            {{ (states.media_player.woonkamer.attributes.volume_level * 100) |int }}
+          friendly_name: 'Sonos Woonkamer Volume'
+# PVoutput
+  - platform: pvoutput
+    system_id: 48668
+    api_key: ca111fbd97267e7a9cf64135e2fc389c219dc690
+    scan_interval: 60
+  - platform: template
+    sensors:
+      power_consumption:
+        value_template: '{% if is_state_attr("sensor.pvoutput", "power_consumption", "NaN") %}0{% else %}{{ states.sensor.pvoutput.attributes.power_consumption }}{% endif %}'
+        friendly_name: 'Using'
+        unit_of_measurement: 'Watt'
+      energy_consumption:
+        value_template: '{{ "%0.1f"|format(states.sensor.pvoutput.attributes.energy_consumption|float/1000) }}'
+        friendly_name: 'Used'
+        unit_of_measurement: 'kWh'
+      power_generation:
+        value_template: '{% if is_state_attr("sensor.pvoutput", "power_generation", "NaN") %}0{% else %}{{ states.sensor.pvoutput.attributes.power_generation }}{% endif %}'
+        friendly_name: 'Generating'
+        unit_of_measurement: 'Watt'
+      energy_generation:
+        value_template: '{% if is_state_attr("sensor.pvoutput", "energy_generation", "NaN") %}0{% else %}{{ "%0.2f"|format(states.sensor.pvoutput.attributes.energy_generation|float/1000) }}{% endif %}'
+        friendly_name: 'Generated'
+        unit_of_measurement: 'kWh'

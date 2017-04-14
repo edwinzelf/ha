@@ -1,0 +1,22 @@
+alias: "Set Volume"
+trigger:
+  - platform: state
+    entity_id: input_slider.Keuken
+action:
+  - service: media_player.volume_set
+  - data_template:
+    - entity_id: media_player.keuken
+    - volume_level: >
+        {{states.input_slider.keuken.state | int / 100}}
+
+
+alias: "Update Volume Slider"
+trigger:
+  - platform: state
+    entity_id: sensor.sonosvolume
+action:
+  - service: input_slider.select_value
+    data_template:
+      entity_id: input_slider.keuken
+      value: >-
+        {{ (states.media_player.keuken.attributes|default({})).volume_level|default(0) * 100 }}

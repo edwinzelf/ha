@@ -1,0 +1,24 @@
+#################################################################
+## Zones
+#################################################################
+
+# Template file
+
+#Work location 1
+  - name: work
+    latitude: xx.xxxxxx
+    longitude: xx.xxxxxx
+    radius: 300
+    icon: mdi:work
+#Work Location 2
+  - name: work 2
+    latitude: xx.xxxxxx
+    longitude: xx.xxxxxx
+    radius: 300
+    icon: mdi:work
+#School
+  - name: School
+    latitude: xx.xxxxxx
+    longitude: xx.xxxxxx
+    radius: 100
+    icon: mdi:school

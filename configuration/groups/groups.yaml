@@ -1,0 +1,165 @@
+matthew:
+  icon: mdi:hotel
+  entities:
+     - group.matthew_lichten
+
+living:
+  name: Woonkamer & keuken
+  entities:
+    - sensor.date
+    - sensor.time
+    - light.Woonkamer
+    - sensor.netatmo_woonkamer_co2
+    - sensor.netatmo_woonkamer_humidity
+    - sensor.netatmo_woonkamer_noise
+    - sensor.netatmo_woonkamer_pressure
+    - sensor.netatmo_woonkamer_temperature
+    - camera.CamWoonkamer
+    - camera.woonkamer_cube
+    - media_player.woonkamer
+    - media_player.keuken
+    - media_player.woonkamertv_ue55d6500
+
+
+Achterkant:
+  name: Achterkant
+  entities:
+    - sensor.netatmo_tuin_humidity
+    - sensor.netatmo_tuin_temperature
+    - camera.CamAchter
+    - camera.CamAchter_oud
+    - sun.sun
+    - group.weer_achter
+
+Voorkant:
+  name: Voorkant
+  entities:
+    - camera.CamVoor
+
+Device Location:
+  - device_tracker.emba
+  - device_tracker.edwin_ephone7
+  - device_tracker.zPhone
+  - device_tracker.jPhone6
+  - device_tracker.mPhone
+
+
+Travel Times:
+  - sensor.Edwin_To_Home
+  - sensor.Edwin_To_Tilburg
+  - sensor.Edwin_To_Apeldoorn
+
+Door Bell:
+  - binary_sensor.front_door_button_pressed
+  - binary_sensor.front_door_motion
+  - sensor.ring_downstairs_volume
+  - sensor.ring_front_door_battery
+  - sensor.ring_front_door_last_activity
+  - sensor.ring_front_door_volume
+  - sensor.ring_front_door_button_pressed
+  - sensor.ring_front_door_motion
+
+Tenmperatuur sensoren:
+    - sensor.Zolder_Temperature
+    - sensor.Slaapkamer_Temperature
+    - sensor.Woonkamer_Temperature
+    - sensor.Buiten_Temperature
+    - sensor.netatmo_woonkamer_temperature
+    - sensor.netatmo_tuin_temperature
+
+Weer Buiten:
+    - sensor.yr_symbol
+    - sensor.yr_cloudiness
+    - sensor.yr_dewpoint_temperature
+    - sensor.yr_fog
+    - sensor.yr_high_clouds
+    - sensor.yr_humidity
+    - sensor.yr_low_clouds
+    - sensor.yr_medium_clouds
+    - sensor.yr_precipitation
+    - sensor.yr_pressure
+    - sensor.yr_temperature
+    - sensor.yr_wind_direction
+    - sensor.yr_wind_speed
+
+Weer netatmo binnen:
+    - sensor.netatmo_woonkamer_co2
+    - sensor.netatmo_woonkamer_humidity
+    - sensor.netatmo_woonkamer_noise
+    - sensor.netatmo_woonkamer_pressure
+    - sensor.netatmo_woonkamer_temperature
+
+Weer netatmo buiten:
+    - sensor.netatmo_tuin_humidity
+    - sensor.netatmo_tuin_temperature
+
+
+SMA sensoren:
+    - sensor.total_yield
+    - sensor.current_power
+    - sensor.current_consumption
+
+PVoutput:
+  - sensor.power_consumption
+  - sensor.energy_consumption
+  - sensor.power_generation
+  - sensor.energy_generation
+
+# Licht groepen
+
+zolder lichten:
+  name: Zolder
+  entities:
+    - scene.zolder
+    - scene.zolder_uit
+    - light.zolder
+    - light.achter
+    - light.buro_1_
+    - light.buro_lamp
+    - light.bloom
+    - light.vloer
+    - light.zolder_ra
+
+matthew lichten:
+  name: Slaapkamer Matthew
+  entities:
+    - light.matthew
+    - light.plafond1
+    - light.plafond2
+    - light.plafond3
+    - light.spot_1
+    - light.spot_2
+    - light.strip
+
+woonkamer lichten:
+    name: Woonkamer
+    entities:
+    - scene.Woonkamer_Half
+    - scene.Woonkamer_Uit
+    - scene.Woonkamer_Vol
+    - switch.Spotjes
+    - switch.Keuken
+    - light.woon_1
+    - light.woon_2
+    - light.woon_3
+    - light.woon_4
+
+sonos:
+  name: Sonos
+  entities:
+  - media_player.woonkamer
+  - media_player.keuken
+  - media_player.badkamer
+
+TVs:
+  name: TV's
+  entities:
+    - media_player._bed_room_ue32k5670
+    - media_player.woonkamertv_ue55d6500
+
+volume_sonos:
+  name: Volume Sonos
+  entities:
+    - input_slider.woonkamer
+    - input_slider.keuken
+    - input_slider.badkamer

@@ -1,0 +1,13 @@
+router:
+  title: 'Router'
+  icon: 'mdi:router-wireless'
+  url: 'https://edge.local'
+unifi:
+  title: 'Unifi'
+  icon: 'mdi:router-wireless'
+  url: 'https://unifi.local:8443'
+
+sonosen:
+  title: 'Sonos'
+  icon: 'mdi:surround-sound'
+  url: 'http://192.168.32.122:1400/status'

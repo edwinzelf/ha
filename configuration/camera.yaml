@@ -1,0 +1,4 @@
+  - platform: synology
+    url: http://192.168.32.9:9900
+    username: !secret synology_user
+    password: !secret synology_password

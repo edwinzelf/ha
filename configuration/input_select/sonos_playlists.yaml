@@ -1,0 +1,9 @@
+sonos_playlist:
+  name: Sonos Playlists
+  options:
+   - 'Pick one'
+   - 'Qmusic'
+   - 'Sky Radio 101 FM'
+   - '100% NL'
+  initial: 'Pick one'
+  icon: 'mdi:playlist-check'

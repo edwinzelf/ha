@@ -1,0 +1,21 @@
+- alias: "Update Volume Slider Woonkamer"
+  trigger:
+    - platform: state
+      entity_id: sensor.sonosvolume_woonkamer
+  action:
+    - service: input_slider.select_value
+      data_template:
+        entity_id: input_slider.woonkamer
+        value: >-
+          {{ (states.media_player.woonkamer.attributes|default({})).volume_level|default(0) * 100 }}
+
+- alias: "Set Volume Woonkamer"
+  trigger:
+    - platform: state
+      entity_id: input_slider.woonkamer
+  action:
+    - service: media_player.volume_set
+      data_template:
+       entity_id: media_player.woonkamer
+       volume_level: >
+          {{states.input_slider.woonkamer.state | int / 100}}

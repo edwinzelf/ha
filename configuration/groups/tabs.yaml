@@ -1,0 +1,96 @@
+# default_view:
+#     view: yes
+#     icon: mdi:home
+#     entities:
+#     - sun.sun
+#     - sensor.yr_symbol
+#     - group.Achterkant
+#     - group.Voorkant
+#     # - group.woonkamer_lichten
+#     # - group.device_location
+#     # - group.Travel_Times
+
+home:
+  view: yes
+  icon: mdi:home-outline
+  entities:
+    - sun.sun
+    - sensor.yr_symbol
+    - device_tracker.edwin_ephone7
+    - device_tracker.zPhone
+    - device_tracker.jPhone6
+    - device_tracker.mPhone
+    - sensor.ring_front_door_last_ding
+    - sensor.ring_front_door_last_motion
+    - sensor.power_consumption
+    - sensor.power_generation
+    - sensor.Edwin_To_Huis
+    - scene.Woonkamer_Half
+    - scene.Woonkamer_Uit
+    - scene.Woonkamer_Vol
+    - scene.zolder
+    - scene.zolder_uit
+    # - binary_sensor.front_door_button_pressed
+    # - binary_sensor.front_door_motion
+    - group.voorkant
+    - group.living
+
+sensors:
+  name: Sensors
+  view: yes
+  icon: mdi:gauge
+  entities:
+    - sensor.pihole_ads_percentage_blocked_today
+    - group.SMA_sensoren
+    - group.device_location
+    - group.Tenmperatuur_sensoren
+
+cameras:
+  name: Cameras
+  view: yes
+  icon: mdi:video
+  entities:
+    - camera.CamVoor
+    - camera.CamWoonkamer
+    - camera.CamAchter
+    - camera.CamAchter_oud
+    - camera.camvoor_oud
+    - camera.woonkamer_cube
+
+Rooms_lights:
+    view: yes
+    name: Rooms Lights
+    icon: mdi:lightbulb-outline
+    entities:
+    - group.woonkamer_lichten
+    - group.zolder_lichten
+    - group.matthew_lichten
+
+Media:
+  view: yes
+  icon: mdi:music-circle
+  entities:
+    - group.volume_sonos
+    - group.sonos
+    - group.TVs
+
+weer:
+  view: yes
+  icon: mdi:weather-cloudy
+  entities:
+    - group.Tenmperatuur_sensoren
+    - group.Weer_Buiten
+    - group.Weer_netatmo_buiten
+    - group.Weer_netatmo_binnen
+Travel:
+  view: yes
+  icon: mdi:car
+  entities:
+  - group.Travel_Times
+
+zolder:
+  name: Zolder
+  view: yes
+  entities:
+    - group.zolder_lichten
+    - camera.camvoor_oud

@@ -1,0 +1,21 @@
+- alias: "Update Volume Slider Badkamer"
+  trigger:
+    - platform: state
+      entity_id: sensor.sonosvolume_badkamer
+  action:
+    - service: input_slider.select_value
+      data_template:
+        entity_id: input_slider.badkamer
+        value: >-
+          {{ (states.media_player.badkamer.attributes|default({})).volume_level|default(0) * 100 }}
+
+- alias: "Set Volume Badkamer"
+  trigger:
+    - platform: state
+      entity_id: input_slider.badkamer
+  action:
+    - service: media_player.volume_set
+      data_template:
+       entity_id: media_player.badkamer
+       volume_level: >
+          {{states.input_slider.badkamer.state | int / 100}}

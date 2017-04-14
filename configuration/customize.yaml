@@ -1,0 +1,98 @@
+sensor.yr_symbol:
+  friendly_name: Weer
+sensor.yr_cloudiness:
+  friendly_name: Bewolking
+sensor.yr_dewpoint_temperature:
+  friendly_name: Dauwpunt temp
+sensor.yr_fog:
+   friendly_name: Mist
+sensor.yr_high_clouds:
+   friendly_name: High clouds
+sensor.yr_humidity:
+   friendly_name: Humidity
+sensor.yr_low_clouds:
+  friendly_name: Low clouds
+sensor.yr_medium_clouds:
+  friendly_name: Medium clouds
+sensor.yr_precipitation:
+  friendly_name: Regen
+sensor.yr_pressure:
+  friendly_name: Luchtdruk
+sensor.yr_temperature:
+  friendly_name: Temperature
+sensor.yr_wind_direction:
+  friendly_name: Wind direction
+sensor.yr_wind_speed:
+  friendly_name: Wind speed
+
+sensor.pihole_ads_percentage_blocked_today:
+  friendly_name: Blocked
+
+
+        ##########################################################
+        ## Door Bell
+        ##########################################################
+
+binary_sensor.front_door_button_pressed:
+  friendly_name: Door Bell
+  icon: mdi:bell-ring
+binary_sensor.front_door_motion:
+  icon: mdi:bell-ring
+  friendly_name: Door Bell Motion
+sensor.ring_front_door_battery:
+  friendly_name: Door Bell
+  icon: mdi:battery
+
+        ##########################################################
+        ## Sonos
+        ##########################################################
+
+media_player.badkamer:
+  icon: mdi:speaker
+  friendly_name: Badkamer Sonos
+media_player.keuken:
+  icon: mdi:speaker
+  friendly_name: Keuken Sonos
+media_player.Woonkamer:
+  icon: mdi:speaker
+  friendly_name: Media Center Woonkamer Sonos
+
+      ##########################################################
+      ## Device Trackers
+      ##########################################################
+device_tracker.emba:
+  icon: mdi:laptop-mac
+device_tracker.edwin_ephone7:
+  icon: mdi:cellphone-iphone
+  friendly_name: Edwin
+device_tracker.zPhone:
+  icon: mdi:cellphone-iphone
+  friendly_name: Zoë
+device_tracker.jPhone6:
+  icon: mdi:cellphone-iphone
+  friendly_name: Judith
+device_tracker.mPhone:
+  icon: mdi:cellphone-iphone
+  friendly_name: Matthew
+
+
+sensor.cpu_load_total:
+  friendly_name: synology cpu
+sensor.memory_usage_real:
+  friendly_name: synology memory
+sensor.network_up:
+  friendly_name: synology upload
+
+      ##########################################################
+      ## PVoutput
+      ##########################################################
+sensor.power_consumption:
+  icon: mdi:flash
+sensor.energy_consumption:
+  icon: mdi:flash
+sensor.power_generation:
+  icon: mdi:flash
+sensor.energy_generation:
+  icon: mdi:flash
+
+  

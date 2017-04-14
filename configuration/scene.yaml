@@ -1,0 +1,76 @@
+- name: Woonkamer Half
+  entities:
+    light.woon_1:
+      state: on
+      brightness: 140
+    light.woon_2:
+      state: on
+      brightness: 140
+    light.woon_3:
+      state: on
+      brightness: 140
+    light.woon_4:
+      state: on
+      brightness: 140
+- name: Woonkamer Vol
+  entities:
+    light.woon_1:
+      state: on
+      brightness: 255
+    light.woon_2:
+      state: on
+      brightness: 255
+    light.woon_3:
+      state: on
+      brightness: 255
+    light.woon_4:
+      state: on
+      brightness: 255
+- name: Woonkamer Uit
+  entities:
+    light.woon_1:
+      state: off
+      brightness: 140
+    light.woon_2:
+      state: off
+      brightness: 140
+    light.woon_3:
+      state: off
+      brightness: 140
+    light.woon_4:
+      state: off
+      brightness: 140
+- name: Zolder
+  entities:
+    light.achter:
+      state: on
+      profile: relax
+      brightness: 140
+    light.buro_1_:
+      state: on
+      profile: relax
+      brightness: 140
+    light.buro_lamp:
+      state: on
+      profile: relax
+      brightness: 140
+    light.bloom:
+      state: on
+      profile: relax
+      brightness: 140
+    light.zolder_ra:
+      state: on
+      profile: relax
+      brightness: 140
+- name: Zolder Uit
+  entities:
+    light.achter:
+      state: off
+    light.buro_1_:
+      state: off
+    light.buro_lamp:
+      state: off
+    light.bloom:
+      state: off
+    light.zolder_ra:
+      state: off

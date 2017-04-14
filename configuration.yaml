@@ -1,0 +1,123 @@
+homeassistant:
+  name: Home
+  latitude: !secret lat
+  longitude: !secret long
+  elevation: 1
+  unit_system: metric
+  time_zone: Europe/Amsterdam
+  customize: !include configuration/customize.yaml
+  customize_glob:
+    "sensor.*_lux":
+      device_class: light
+    "sensor.*_humidity":
+      device_class: moisture
+      icon: mdi:water-percent
+
+# Show links to resources in log and frontend
+introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: !secret api_password
+  # Uncomment this if you are using SSL or running in Docker etc
+  base_url: has.local
+
+# Checks for available updates
+updater:
+
+# recorder:
+#   # Delete events and states older than 1 weeks
+#   purge_days: 7
+
+# Discover some devices automatically
+discovery:
+  ignore:
+    - apple_tv
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+#################################################################
+## Components
+#################################################################
+# sensor sma:
+#   - platform: sma
+#     host: !secret sma_ip
+#     password: '0000'
+#     # group: user
+#     sensors:
+#       current_power:
+#       # current_power:
+#       # current_consumption:
+#       # total_power:
+#       # total_consumption:
+#       # current_consumption: [total_consumption]
+#       # total_yield:
+
+netatmo:
+  api_key: !secret netatmo_api_key
+  secret_key: !secret netatmo_secret_key
+  username: !secret netatmo_username
+  password: !secret netatmo_pasword
+
+# Text to speech
+tts:
+  - platform: google
+    language: 'nl'
+
+light:
+  platform: hue
+  host: !secret hue_ip
+  allow_hue_groups: true
+  allow_unreachable: true
+
+zwave:
+  usb_path: /dev/ttyACM0
+
+ring:
+  username: !secret ring_user
+  password: !secret ring_pwd
+
+mqtt:
+  broker: !secret mqtt_broker
+  port: 15834
+  client_id: ha
+  keepalive: 60
+  username: ha
+  password: !secret mqtt_password
+
+
+#################################################################
+## Includes
+#################################################################
+# named dirs
+group:          !include_dir_merge_named configuration/groups
+input_select:   !include_dir_merge_named configuration/input_select
+script:         !include_dir_merge_named configuration/scripts
+# automation:     !include_dir_merge_named automation
+automation:     !include_dir_merge_list configuration/automation/
+sensor:         !include configuration/sensor.yaml
+panel_iframe:   !include configuration/panel_iframe.yaml
+binary_sensor:  !include configuration/binary_sensor.yaml
+device_tracker: !include configuration/device_tracker.yaml
+media_player:   !include configuration/media_player.yaml
+camera:         !include configuration/camera.yaml
+zone:           !include configuration/zones.yaml
+scene:          !include configuration/scene.yaml
+switch:         !include configuration/switches.yaml
+input_slider:   !include configuration/input_slider.yaml

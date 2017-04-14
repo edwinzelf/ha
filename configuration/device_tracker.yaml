@@ -1,0 +1,23 @@
+- platform: unifi
+  host: !secret unifi_ip
+  username: !secret unifi_user
+  password: !secret unifi_password
+  interval_seconds: 12
+  consider_home: 120
+  verify_ssl: false
+
+- platform: nmap_tracker
+  home_interval: 5
+  consider_home: 60
+  track_new_devices: no
+  hosts:
+  # - !secret phone1
+  - !secret phone2
+
+- platform: owntracks
+  max_gps_accuracy: 50
+  waypoints: True
+  waypoint_whitelist:
+    - edwin
+    - judith
+    - zoe

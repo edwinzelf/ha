@@ -1,0 +1,23 @@
+woonkamer:
+  icon: mdi:volume-high
+  name: Volume Woonkamer
+  # initial: 30
+  min: 0
+  max: 100
+  step: 1
+
+keuken:
+  icon: mdi:volume-high
+  name: Volume Keuken
+  # initial: 30
+  min: 0
+  max: 100
+  step: 1
+
+badkamer:
+  icon: mdi:volume-high
+  name: Volume Badkamer
+  # initial: 30
+  min: 0
+  max: 100
+  step: 1

@@ -1,0 +1,14 @@
+- platform: command_line
+  switches:
+    spotjes:
+      command_on: "/home/homeassistant/.homeassistant/homewizard/homewizard.sh -d Spotjes -s on"
+      command_off: "/home/homeassistant/.homeassistant/homewizard/homewizard.sh -d Spotjes -s off"
+      command_state: "/home/homeassistant/.homeassistant/homewizard/homewizard.sh -d Spotjes -g"
+      value_template: '{{ value == "on" }}'
+      friendly_name: Spotjes
+    keuken:
+      command_on:    "/home/homeassistant/.homeassistant/homewizard/homewizard.sh -d Keuken -s on"
+      command_off:   "/home/homeassistant/.homeassistant/homewizard/homewizard.sh -d Keuken -s off"
+      command_state: "/home/homeassistant/.homeassistant/homewizard/homewizard.sh -d Keuken -g"
+      value_template: '{{ value == "on" }}'
+      friendly_name: Keuken

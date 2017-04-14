@@ -1,0 +1,8 @@
+sonos_favorites:
+  name: Sonos Favorites
+  options:
+   - 'Qmusic'
+   - 'Sky Radio 101 FM'
+   - '100% NL'
+  initial: 'Qmusic'
+  icon: 'mdi:playlist-check'
